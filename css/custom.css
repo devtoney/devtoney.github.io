@@ -1,0 +1,22 @@
+.customanchor {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Add a background color on hover */
+.customanchor:hover {
+    /* background-color: #f8f9fa; */
+    /* Change to desired hover color */
+    transition: background-color 0.3s ease;
+    /* Smooth transition */
+}
+
+/* Add styles to the box on hover */
+.customanchor .box:hover {
+    box-shadow: 10px 10px 20px rgba(255, 255, 255, 0.8);
+    /* Optional: add shadow for depth */
+    transform: translateY(-5px);
+    /* Optional: lift effect */
+    transition: all 0.5s ease;
+    /* Smooth transition */
+}
