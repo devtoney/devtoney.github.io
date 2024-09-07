@@ -11,12 +11,72 @@
     /* Smooth transition */
 }
 
+.customanchor .box {
+    box-shadow: 1px 1px 5px rgba(88, 101, 174, 0.8);
+}
+
 /* Add styles to the box on hover */
 .customanchor .box:hover {
-    box-shadow: 10px 10px 20px rgba(255, 255, 255, 0.8);
+    box-shadow: 10px 10px 20px rgba(1, 18, 112, 0.8);
     /* Optional: add shadow for depth */
     transform: translateY(-5px);
     /* Optional: lift effect */
     transition: all 0.5s ease;
     /* Smooth transition */
+}
+
+.domainbutton {
+    text-align: center;
+    padding-top: 20px;
+    justify-content: center;
+    display: flex;
+}
+
+.domainbutton a {
+    color: white;
+    background-color: rgb(30, 58, 162);
+    width: auto;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(88, 101, 174, 0.8);
+
+}
+
+.domainbutton a:hover {
+    box-shadow: 10px 10px 20px rgba(1, 18, 112, 0.8);
+    /* Optional: add shadow for depth */
+    transform: translateY(-5px);
+    /* Optional: lift effect */
+    transition: all 0.5s ease;
+    /* Smooth transition */
+}
+
+.gitbutton {
+    text-align: center;
+    padding-top: 20px;
+    justify-content: center;
+    display: flex;
+}
+
+.gitbutton a {
+    color: #1701ff;
+    background-color: rgb(255, 255, 255,0.9);
+    width: auto;
+    padding: 10px;
+    border-radius: 10px;
+    /* box-shadow: 5px 5px 10px rgba(88, 101, 174, 0.8); */
+
+}
+
+.gitbutton a:hover {
+    box-shadow: 10px 10px 20px rgba(1, 18, 112, 0.8);
+    /* Optional: add shadow for depth */
+    transform: translateY(-5px);
+    /* Optional: lift effect */
+    transition: all 0.5s ease;
+    /* Smooth transition */
+}
+
+.wireless{
+    height: 300px;
 }
