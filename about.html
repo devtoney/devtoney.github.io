@@ -1,223 +1,200 @@
 <!DOCTYPE html>
-<html>
 
 <head>
-  <!-- Basic -->
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <!-- Mobile Metas -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <!-- Site Metas -->
-  <meta name="keywords"
-    content="FuSa, FUNCTIONAL SAFETY, POST SILICON VALIDATION, MOTOR CONTROL, HIGH SPEED HARDWARE, EMBEDDED LINUX,WIRELESS TECHNOLOGY, SOFTWARE DEVELOPMENT, EMBEDDED SOFTWARE & HARDWARE, PCB&PCBA MANUFACTURING " />
-  <meta name="description"
-    content="Emirates Automation, with offices in Bangalore and Dubai, excels in embedded systems, offering contract manufacturing, software, hardware design, and consultancy." />
-  <meta name="author" content="Emirates Automation, Toney Abraham" />
-  <link rel="shortcut icon" href="images/logos/ea_logo.webp" type="">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title> Emirates Automation </title>
+	<link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,600,400italic,700' rel='stylesheet'
+		type='text/css'>
+	<link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
 
-  <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="css/icomoon.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/custom.css">
 
-  <!-- fonts style -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="css/magnific-popup.css">
 
-  <!--owl slider stylesheet -->
-  <link rel="stylesheet" type="text/css"
-    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+	<!-- Owl Carousel  -->
+	<link rel="stylesheet" href="css/owl.carousel.min.css">
+	<link rel="stylesheet" href="css/owl.theme.default.min.css">
 
-  <!-- font awesome style -->
-  <link href="css/font-awesome.min.css" rel="stylesheet" />
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/custom.css">
 
-  <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet" />
-  <!-- responsive style -->
-  <link href="css/responsive.css" rel="stylesheet" />
+	<!-- Modernizr JS -->
+	<script src="js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+	<script src="https://www.gstatic.com/firebasejs/9.18.0/firebase-app-compat.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/9.18.0/firebase-firestore-compat.js"></script>
 
 </head>
 
-<body class="sub_page">
-  <div class="hero_area">
-    <!-- loader  -->
-    <!-- <div class="loader_bg">
-      <div class="loader"><img src="images/logos/loading.gif" alt="#" /></div>
-    </div> -->
+<body>
 
-    <div class="hero_area">
+	<div id="page">
+		<nav class="fh5co-nav" role="navigation">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-2">
+						<div id="fh5co-logo"><a href="index.html">JohnWedsJincy<strong>.</strong></a></div>
+					</div>
+				</div>
 
-      <div class="hero_bg_box">
-        <div class="bg_img_box">
-          <img src="images/hero-bg.webp" alt="">
-        </div>
-      </div>
+			</div>
+		</nav>
 
-      <!-- header section strats -->
-      <header class="header_section">
-        <div class="container-fluid">
-          <nav class="navbar navbar-expand-lg custom_nav-container ">
-            <a class="navbar-brand" href="index.html">
-              <span><img class="image" src="images/logos/banner.webp" height="80vh" alt="banner image"></span>
-            </a>
+		<div id="customAlert" class="alert-box">
+			<div class="alert-content">
+				<span class="close-btn">&times;</span>
+				<img src="assets/thank.png" alt="Thank You" height="300px">
+				<p id="alertMessage"></p>
+				<a href="../main.html"><button id="closeAlertBtn">OK</button></a>
+			</div>
+		</div>
+		<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner"
+			style="background-image:url(assets/bglow.gif);">
+			<div class="overlay"></div>
+			<div class="fh5co-container">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2 text-center">
+						<div class="display-t">
+							<div class="display-tc animate-box" data-animate-effect="fadeIn">
+								<h1>Wish Them on Their Wedding</h1>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<div id="fh5co-started" class="fh5co-bg">
+			<div class="overlay"></div>
+			<div class="container">
+				<div class="row animate-box">
+				</div>
+				<div class="row animate-box">
+					<div class="col-md-10 col-md-offset-1">
+						<form class="form-inline" action="" id="wishform">
 
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class=""> </span>
-            </button>
+							<div class="row-md-4 row-sm-4">
+								<div class="form-group">
+									<label for="text"
+										style="color: #1d3519;font-size: 18px;font-family: Georgia, 'Times New Roman', Times, serif;">Add
+										Your Wishes</label><br>
+									<input class="form-control" type="text" id="message" required>
+								</div>
+							</div>
+							<div class="row-md-4 row-sm-4">
+								<div class="form-group">
+									<label for="name"
+										style="color: #1d3519;font-size: 18px;font-family: Georgia, 'Times New Roman', Times, serif;">Name</label><br>
+									<input type="text" class="form-control" id="name" required>
+								</div>
+							</div>
+							<div class="col-md-4 col-sm-4">
+								<button type="submit" style="color: white;background-color: #4e654b;">Submit</button>
+								<!-- class="btn btn-default btn-block" -->
+							</div>
+						</form>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav  ">
-                <li class="nav-item ">
-                  <a class="nav-link" href="index.html">Home </a>
-                </li>
-                <li class="nav-item active">
-                  <a class="nav-link" href="about.html"> About <span class="sr-only">(current)</span> </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="service.html">Domains</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="why.html">Why Us</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="contact.html">Contact Us</a>
-                </li>
-              </ul>
-            </div>
-          </nav>
-        </div>
-      </header>
-      <!-- end header section -->
-    </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
-    <!-- about section -->
+	<div class="gototop js-top">
+		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+	</div>
+	<!-- jQuery -->
+	<script src="js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="js/jquery.waypoints.min.js"></script>
+	<!-- Carousel -->
+	<script src="js/owl.carousel.min.js"></script>
+	<!-- countTo -->
+	<script src="js/jquery.countTo.js"></script>
 
-    <section class="about_section layout_padding">
-      <div class="container  ">
-        <div class="heading_container heading_center">
-          <h2>
-            About <span>Us</span>
-          </h2>
-        </div>
-        <div class="row">
-          <div class="col-md-6 ">
-            <div class="img-box">
-              <img src="images/logos/aboutus.webp" alt="">
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="detail-box">
-              <h3>
-                We Are Emirates Automation
-              </h3>
-              <p>
-                Emirates Automation is a leading embedded systems company with a strong presence in Bangalore and Dubai,
-                offering a comprehensive suite of services tailored to meet the evolving needs of the embedded
-                technology landscape. Specializing in contract manufacturing, the company boasts state-of-the-art
-                facilities to ensure precision and efficiency in electronic product development. The skilled software
-                development team excels in creating robust and scalable solutions, while expertise in hardware design
-                spans areas such as PCB and PCBA manufacturing, high-speed hardware design, motor control, and
-                post-silicon validation.</p>
-              <p>
-                Emirates Automation sets itself apart by providing consultancy services, guiding businesses through the
-                intricacies of embedded systems. The company operates in diverse working domains, including PCB and PCBA
-                manufacturing, embedded software and hardware development, wireless technology, embedded Linux,
-                high-speed hardware, motor control, post-silicon validation, and functional safety. With a commitment to
-                excellence, Emirates Automation aims to be a trusted partner for clients seeking cutting-edge embedded
-                solutions. The company's dedicated team of professionals is passionate about transforming ideas into
-                reality and looks forward to collaborating on innovative embedded projects.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+	<!-- Stellar -->
+	<script src="js/jquery.stellar.min.js"></script>
+	<!-- Magnific Popup -->
+	<script src="js/jquery.magnific-popup.min.js"></script>
+	<script src="js/magnific-popup-options.js"></script>
 
-    <!-- end about section -->
+	<!-- Main -->
+	<script src="js/main.js"></script>
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			var showAlertBtn = document.getElementById("showAlertBtn");
+			var customAlert = document.getElementById("customAlert");
+			var closeAlertBtn = document.getElementById("closeAlertBtn");
+			var closeSpan = document.querySelector(".close-btn");
+			var alertMessage = document.getElementById("alertMessage");
 
-    <!-- info section -->
-    <section class="info_section layout_padding2">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6  info_col">
-            <div class="info_contact">
-              <h4>
-                Address
-              </h4>
-              <div class="contact_link_box">
-                <a href="https://maps.app.goo.gl/8YFW5T5DyaNm2Kyz6" target="_blank">
-                  <i class="fa fa-map-marker" aria-hidden="true"></i>
-                  <span>Emirates Automation Pvt Ltd<br>
-                    2nd Floor, Chandramalli Business Centre<br>
-                    Doddathoguru <br>
-                    Electronic City - Phase 1<br>
-                    Bangalore - 560100<br>
-                    India</span>
-                </a>
-                <a href="tel:+918861504422">
-                  <i class="fa fa-phone" aria-hidden="true"></i>
-                  <span>
-                    Call +91 8861504422
+			function showCustomAlert(message) {
+				alertMessage.textContent = message;
+				customAlert.style.display = "flex";
+			}
 
-                  </span>
-                </a>
-                <a href="mailto:sales@emiratesautomation.com?body=Hello%20there!">
-                  <i class="fa fa-envelope" aria-hidden="true"></i>
-                  <span>
-                    sales@emiratesautomation.com
-                  </span>
-                </a>
-              </div>
-            </div>
-            <div class="info_social">
-            </div>
-          </div>
-          <div class="col-md-6  mx-auto info_col">
-            <div class="info_link_box">
-              <h4>
-                Links
-              </h4>
-              <div class="info_links">
-                <a class="active" href="index.html">
-                  Home
-                </a>
-                <a class="" href="about.html">
-                  About
-                </a>
-                <a class="" href="service.html">
-                  Domains
-                </a>
-                <a class="" href="why.html">
-                  Why Us
-                </a>
-                <a class="" href="contact.html">
-                  contact
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+			function hideCustomAlert() {
+				customAlert.style.display = "none";
+			}
 
-    <!-- jQery -->
-    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-    <!-- popper js -->
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-      </script>
-    <!-- bootstrap js -->
-    <script type="text/javascript" src="js/bootstrap.js"></script>
-    <!-- owl slider -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
-    </script>
-    <!-- custom js -->
-    <script type="text/javascript" src="js/custom.js"></script>
-    <!-- Google Map -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
-    </script>
-    <!-- End Google Map -->
+			closeAlertBtn.addEventListener("click", hideCustomAlert);
+			closeSpan.addEventListener("click", hideCustomAlert);
 
+
+			// Your web app's Firebase configuration
+			var firebaseConfig = {
+				apiKey: "AIzaSyAXOdQ84apJHkNjA_Y0qLARmUOzp3Xhr2U",
+				authDomain: "sagar-wedding.firebaseapp.com",
+				projectId: "sagar-wedding",
+				storageBucket: "sagar-wedding.appspot.com",
+				messagingSenderId: "865985599847",
+				appId: "1:865985599847:web:0108bd93871d5a88dab7c2"
+			};
+
+			// Initialize Firebase
+			firebase.initializeApp(firebaseConfig);
+			var db = firebase.firestore();
+
+			// Handle form submission
+			document.getElementById('wishform').addEventListener('submit', function (e) {
+				e.preventDefault();
+
+				var name = document.getElementById('name').value;
+				var message = document.getElementById('message').value;
+
+				// Add a new document with a generated ID
+				db.collection("users").add({
+					name: name,
+					message: message
+				})
+					.then(function (docRef) {
+						console.log("Document written with ID: ", docRef.id);
+						showCustomAlert("");
+						// alert("Thank you, Your wishes has been received...!");
+					})
+					.catch(function (error) {
+						console.error("Error adding Wishes: ", error);
+						showCustomAlert("Error: Unable to send your wishes. Please try again.");
+					});
+			});
+		});
+	</script>
 </body>
 
 </html>
