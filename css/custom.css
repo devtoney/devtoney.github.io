@@ -392,7 +392,19 @@
   z-index: 2;
 }
 
-@media screen and (max-width:420px) {
+.walktorem {
+  font-size: 18px;
+  text-align: right;
+  font-family: 'Courier New', Courier, monospace;
+  color: #927552;
+}
+.hei{
+  height: 1px;
+}
+.gap{
+
+}
+@media screen and (max-width:500px) {
   .addtocalendar {
     color: white;
     font-size: 20px;
@@ -410,6 +422,127 @@
     letter-spacing: 5px;
     font-size: 12px;
     margin-top: 20%;
+  }
+
+
+  .ampcontainer {
+    position: relative;
+    font-size: 400px;
+    /* Size of the & symbol */
+    text-align: center;
+    height: 100%;
+    width: 100%;
+  }
+
+  .ampersand {
+    position: relative;
+    z-index: 0;
+    /* Ensures the & symbol is above the background */
+    font-family: alice;
+    /* background-color: #090d12; */
+    background-image: url(../images/Gallery-img6-free-img.jpg);
+    background-repeat: repeat;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    /* font: 900; */
+    -webkit-font-smoothing: antialiased;
+    text-transform: uppercase;
+  }
+
+  .ampimage-over-text {
+    position: absolute;
+    top: 50%;
+    /* Position the image in the vertical center */
+    left: 50%;
+    /* Position the image in the horizontal center */
+    transform: translate(-50%, -50%);
+    /* Adjust the image to truly center it */
+    width: 250px;
+    /* Size of the image, adjust as needed */
+    height: 250px;
+    /* Size of the image, adjust as needed */
+    z-index: 1;
+    /* Place the image behind the text */
+    border-radius: 50%;
+  }
+  .hei{
+    height: 20px;
+  }
+
+  .topboxcontainer {
+    font-size: 20px;
+  }
+
+  .walktorem {
+    font-size: 14px;
+  }
+
+}
+
+@media screen and (min-width:500px) and (max-width:1024px) {
+  .addtocalendar {
+    color: white;
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    border: 2px solid white;
+    width: 200px;
+    display: inline-block;
+    text-align: center;
+    /* line-height: 70px; */
+  }
+
+  .wearegetting {
+    font-family: stix-two-text;
+    color: white;
+    letter-spacing: 5px;
+    font-size: 12px;
+    margin-top: 20%;
+  }
+
+
+  .ampcontainer {
+    position: relative;
+    font-size: 550px;
+    /* Size of the & symbol */
+    text-align: center;
+    height: 100%;
+    width: 100%;
+  }
+
+  .ampersand {
+    position: relative;
+    z-index: 0;
+    /* Ensures the & symbol is above the background */
+    font-family: alice;
+    /* background-color: #090d12; */
+    background-image: url(../images/Gallery-img6-free-img.jpg);
+    background-repeat: repeat;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    /* font: 900; */
+    -webkit-font-smoothing: antialiased;
+    text-transform: uppercase;
+  }
+
+  .ampimage-over-text {
+    position: absolute;
+    top: 50%;
+    /* Position the image in the vertical center */
+    left: 50%;
+    /* Position the image in the horizontal center */
+    transform: translate(-50%, -50%);
+    /* Adjust the image to truly center it */
+    width: 350px;
+    /* Size of the image, adjust as needed */
+    height: 350px;
+    /* Size of the image, adjust as needed */
+    z-index: 1;
+    /* Place the image behind the text */
+    border-radius: 50%;
   }
 
 }
