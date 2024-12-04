@@ -398,12 +398,24 @@
   font-family: 'Courier New', Courier, monospace;
   color: #927552;
 }
-.hei{
+
+.hei {
   height: 1px;
 }
-.gap{
 
+.gap {
+  height: 100px;
 }
+.imgsz{
+  height: auto;
+  max-width: 100%;
+}
+.invitequote {
+  /* text-align: justify;s */
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
 @media screen and (max-width:500px) {
   .addtocalendar {
     color: white;
@@ -430,7 +442,7 @@
     font-size: 400px;
     /* Size of the & symbol */
     text-align: center;
-    height: 100%;
+    /* height: 90%; */
     width: 100%;
   }
 
@@ -467,7 +479,8 @@
     /* Place the image behind the text */
     border-radius: 50%;
   }
-  .hei{
+
+  .hei {
     height: 20px;
   }
 
@@ -477,6 +490,13 @@
 
   .walktorem {
     font-size: 14px;
+  }
+
+  .invitequote {
+    padding: 20px;
+    /* text-align: justify;s */
+    margin-left: 40px;
+    margin-right: 40px;
   }
 
 }
@@ -543,6 +563,13 @@
     z-index: 1;
     /* Place the image behind the text */
     border-radius: 50%;
+  }
+
+  .invitequote {
+    padding: 20px;
+    /* text-align: justify;s */
+    margin-left: 40px;
+    margin-right: 40px;
   }
 
 }
