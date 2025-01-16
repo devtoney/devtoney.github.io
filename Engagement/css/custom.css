@@ -1,0 +1,64 @@
+.carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    /* Enables smooth scrolling on iOS devices */
+    scroll-behavior: smooth;
+    /* Optional: Add some padding and hide scrollbar */
+    padding-bottom: 1em;
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+}
+
+.carousel::-webkit-scrollbar {
+    /* WebKit based browsers */
+    display: none;
+}
+
+/* Styles for carousel items */
+.carousel-item {
+    flex: 0 0 auto;
+    width: 100%;
+    /* Ensure items take full width */
+    scroll-snap-align: start;
+}
+
+/* Optional: Add styles for images */
+.carousel-item img {
+    width: 100%;
+    height: auto;
+}
+
+/* Styles for testimonial carousel */
+.testimonial-carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    /* Enables smooth scrolling on iOS devices */
+    scroll-behavior: smooth;
+    /* Optional: Add some padding and hide scrollbar */
+    padding-bottom: 1em;
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+}
+
+.testimonial-carousel::-webkit-scrollbar {
+    /* WebKit based browsers */
+    display: none;
+}
+
+/* Styles for testimonial items */
+.testimonial-item {
+    flex: 0 0 auto;
+    width: 100%;
+    /* Ensure items take full width */
+    scroll-snap-align: start;
+    padding: 0 10px;
+    /* Optional: Add padding */
+}
