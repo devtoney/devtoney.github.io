@@ -388,7 +388,6 @@
                               </div>
                          </form>
                     </div>
-
                </div>
           </div>
      </section>
@@ -396,16 +395,6 @@
 
      <!-- GOOGLE MAP -->
      <section id="google-map">
-          <!-- How to change your own map point
-            1. Go to Google Maps
-            2. Click on your location point
-            3. Click "Share" and choose "Embed map" tab
-            4. Copy only URL and paste it within the src="" field below
-	-->
-          <!-- <iframe
-               src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d493.4358468610016!2d77.0302788!3d8.3536806!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b05a8b454db8ccd%3A0x7a510a332a917f98!2sMariya%20Nilayam%20Hospital!5e0!3m2!1sen!2sin!4v1754652165898!5m2!1sen!2sin"
-               width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-               referrerpolicy="no-referrer-when-downgrade"></iframe> -->
           <iframe
                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d493.4358468610016!2d77.0302788!3d8.3536806!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b05a8b454db8ccd%3A0x7a510a332a917f98!2sMariya%20Nilayam%20Hospital!5e0!3m2!1sen!2sin!4v1754652165898!5m2!1sen!2sin"
                width="100%" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
@@ -472,15 +461,16 @@
                     <div class="col-md-12 col-sm-12 border-top">
                          <div class="col-md-4 col-sm-6">
                               <div class="copyright-text">
-                                   <p>Copyright &copy; 2025 Mariya Nilayam Hospital 
-                                        <br>| Design : <a href="#" style="font-weight: 500; color: #0f0239;">Unb.ound</a> 
+                                   <p>Copyright &copy; 2025 Mariya Nilayam Hospital
+                                        <br>| Design : <a href="#"
+                                             style="font-weight: 500; color: #0f0239;">Unb.ound</a>
                               </div>
                          </div>
                          <div class="col-md-6 col-sm-6">
                               <div class="footer-link">
                                    <a href="#">Laboratory Tests</a>
                                    <a href="#">Departments</a>
-                                   <!-- <a href="#">Insurance Policy</a> -->
+                                   <a href="login.html">Admin Login</a>
                                    <!-- <a href="#">Careers</a> -->
                               </div>
                          </div>
@@ -560,13 +550,10 @@
                          // Show error message
                          const msgEl = document.getElementById("formMessage");
                          msgEl.style.color = "red";
-                         msgEl.textContent = "❌ Failed to save appointment. Please try again.";
+                         msgEl.textContent = "Failed to save appointment. Please try again.";
                          msgEl.style.display = "block";
                     })
           });
-
      </script>
-
 </body>
-
 </html>
