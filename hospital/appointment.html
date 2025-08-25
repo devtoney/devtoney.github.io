@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+     <title>Appointment</title>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+     <meta name="description" content="">
+     <meta name="keywords" content="">
+     <meta name="author" content="Toney Abraham">
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+     <link rel="stylesheet" href="css/bootstrap.min.css">
+     <link rel="stylesheet" href="css/font-awesome.min.css">
+     <link rel="stylesheet" href="css/animate.css">
+     <link rel="stylesheet" href="css/owl.carousel.css">
+     <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+     <!-- MAIN CSS -->
+     <link rel="stylesheet" href="css/style.css">
+
+     <!-- Firebase Script -->
+     <script src="https://www.gstatic.com/firebasejs/9.18.0/firebase-app-compat.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/9.18.0/firebase-firestore-compat.js"></script>
+
+</head>
+
+<body id="appoint" data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
+
+     <section class="preloader">
+          <div class="spinner">
+
+               <span class="spinner-rotate"></span>
+
+          </div>
+     </section>
+
+     <!-- HEADER -->
+     <header>
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-4 col-sm-5">
+                         <p style="font-weight: 500;">"We foster integrated health for all while empowering the
+                              vulnerable, women and children"
+                         </p>
+                    </div>
+
+                    <div class="col-md-8 col-sm-7 text-align-right">
+                         <span class="phone-icon"><i class="fa fa-phone"></i><a href="tel:+04712266065">04712
+                                   266065</a></span>
+                         <span class="date-icon"><i class="fa fa-calendar-plus-o"></i>24/7</span>
+                         <span class="email-icon"><i class="fa fa-envelope-o"></i> <a
+                                   href="mailto:marianilayamhospital@gmail.com">marianilayamhospital@gmail.com</a></span>
+                    </div>
+               </div>
+          </div>
+     </header>
+
+
+     <!-- MENU -->
+     <section class="navbar navbar-default navbar-static-top" role="navigation">
+          <div class="container">
+
+               <div class="navbar-header">
+                    <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                         <span class="icon icon-bar"></span>
+                         <span class="icon icon-bar"></span>
+                         <span class="icon icon-bar"></span>
+                    </button>
+
+                    <!-- lOGO TEXT HERE -->
+                    <a href="index.html" class="navbar-brand"><span
+                              style="background-color:#a5c422;padding: 10px;border-radius: 10px; color: white;">Mariya
+                              Nilayam</span></a>
+               </div>
+
+               <!-- MENU LINKS -->
+               <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                         <!-- <li><a href="#top" class="smoothScroll">Home</a></li> -->
+                         <!-- <li><a href="index.html#departments" class="smoothScroll">Departments</a></li> -->
+                         <li><a href="about.html" class="smoothScroll">About Us</a></li>
+                         <li><a href="#team" class="smoothScroll">Doctors</a></li>
+                         <li><a href="#news" class="smoothScroll">News</a></li>
+                         <li><a href="#google-map" class="smoothScroll">Contact</a></li>
+                         <!-- <li class="appointment-btn"><a href="#appointment">Make an appointment</a></li> -->
+                    </ul>
+               </div>
+          </div>
+     </section>
+
+     <section id="appointment" data-stellar-background-ratio="3">
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-6 col-sm-6">
+                         <img src="images/appointment.jpg" class="img-responsive" alt="">
+                    </div>
+
+                    <div class="col-md-6 col-sm-6">
+                         <!-- CONTACT FORM HERE -->
+                         <form id="appointment-form" role="form" method="post" action="#">
+
+                              <!-- SECTION TITLE -->
+                              <div class="section-title wow fadeInUp" data-wow-delay="0.4s">
+                                   <h2>Make an appointment</h2>
+                              </div>
+
+                              <div class="wow fadeInUp" data-wow-delay="0.8s">
+                                   <div class="col-md-6 col-sm-6">
+                                        <label for="name">Name</label>
+                                        <input type="text" class="form-control" id="name" name="name"
+                                             placeholder="Full Name" required>
+                                   </div>
+
+                                   <!-- <div class="col-md-6 col-sm-6">
+                                        <label for="email">Email</label>
+                                        <input type="email" class="form-control" id="email" name="email"
+                                             placeholder="Your Email">
+                                   </div> -->
+
+                                   <div class="col-md-6 col-sm-6">
+                                        <label for="date">Select Date</label>
+                                        <input type="date" name="date" id="dateInput" value="" class="form-control"
+                                             required>
+                                   </div>
+
+                                   <div class="col-md-6 col-sm-6">
+                                        <label for="select">Select Department</label>
+                                        <select class="form-control" id="department" name="department" required>
+                                             <option>General Health</option>
+                                             <option>Cardiology</option>
+                                             <option>Dental</option>
+                                             <option>Medical Research</option>
+                                        </select>
+                                   </div>
+
+                                   <div class="col-md-12 col-sm-12">
+                                        <label for="telephone">Phone Number</label>
+                                        <input type="tel" class="form-control" id="phone" name="phone"
+                                             placeholder="Phone" required>
+                                        <!-- <label for="Message">Additional Message</label>
+                                        <textarea class="form-control" rows="5" id="message" name="message"
+                                             placeholder="Message"></textarea> -->
+                                        <button type="submit" class="form-control" id="cf-submit" name="submit">Submit
+                                             Button</button>
+                                        <p id="formMessage" style="display:none; color: green; font-weight: bold;"></p>
+
+                                   </div>
+                              </div>
+                         </form>
+                    </div>
+               </div>
+          </div>
+     </section>
+
+     <!-- SCRIPTS -->
+     <script src="js/jquery.js"></script>
+     <script src="js/bootstrap.min.js"></script>
+     <script src="js/jquery.sticky.js"></script>
+     <script src="js/jquery.stellar.min.js"></script>
+     <script src="js/wow.min.js"></script>
+     <script src="js/smoothscroll.js"></script>
+     <script src="js/owl.carousel.min.js"></script>
+     <script src="js/custom.js"></script>
+     <script type="module" src="js/firebase-config.js"></script>
+     <script type="module" src="js/appointment.js"></script>
+</body>
+
+</html>

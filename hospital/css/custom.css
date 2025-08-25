@@ -1,0 +1,33 @@
+  .services-info {
+      padding: 20px 30px 0 30px;
+  }
+
+  .services-info p {
+      text-align: center;
+      color: white;
+      padding-bottom: 10px;
+      font-size: 24px;
+  }
+
+  .readmore {
+      font-size: 18px;
+      text-align: center;
+      padding: 10px;
+      /* background-color: black; */
+      margin-top: 20px;
+  }
+  .readmore a{
+    background-color: #e9e9e9;
+    padding: 10px;
+    border-radius: 25px;
+    font-weight: 500;
+  }
+  .glass-box {
+  background: rgba(255, 255, 255, 0.2);  /* transparent white */
+  backdrop-filter: blur(10px);           /* blur effect */
+  -webkit-backdrop-filter: blur(10px);   /* Safari support */
+  border-radius: 15px;                   /* rounded corners */
+  padding: 20px;
+  color: #fff;                           /* white text for readability */
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2); /* subtle shadow */
+}
