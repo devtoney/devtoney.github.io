@@ -1,6 +1,7 @@
 import { db } from "./firebase-config.js";
+import { collection, addDoc } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
 
-document.getElementById("appointment-form").addEventListener("submit", function (e) {
+document.getElementById("appointment-form").addEventListener("submit", async function (e) {
   e.preventDefault();
 
   // Get values
@@ -13,25 +14,25 @@ document.getElementById("appointment-form").addEventListener("submit", function 
   const selectedDate = dateValue ? new Date(dateValue) : null;
 
   // Save to Firestore
-  db.collection("patient").add({
-    name: nameValue,
-    date: selectedDate,
-    department: departmentValue,
-    phone: phoneValue
-  })
-  .then(function (docRef) {
+  try {
+    await addDoc(collection(db, "patient"), {
+      name: nameValue,
+      date: selectedDate,
+      department: departmentValue,
+      phone: phoneValue
+    });
+
     const msgEl = document.getElementById("formMessage");
     msgEl.style.color = "green";
     msgEl.textContent = `Appointment booked successfully for ${nameValue} in ${departmentValue} department on ${dateValue}.`;
     msgEl.style.display = "block";
 
     document.getElementById("appointment-form").reset();
-  })
-  .catch(function (error) {
+  } catch (error) {
     console.error("Error adding document:", error);
     const msgEl = document.getElementById("formMessage");
     msgEl.style.color = "red";
     msgEl.textContent = "Failed to save appointment. Please try again.";
     msgEl.style.display = "block";
-  });
+  }
 });

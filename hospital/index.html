@@ -75,9 +75,11 @@
                     </button>
 
                     <!-- lOGO TEXT HERE -->
-                    <a href="#top" class="navbar-brand"><span
-                              style="background-color:#a5c422;padding: 10px;border-radius: 10px; color: white;">Mariya
-                              Nilayam</span></a>
+                    <a href="#top" class="navbar-brand">
+                         <span><img src="images/logo.png" alt="" class="logo"></span>
+                         <!-- <img src="images/logo.png" alt="logo" class="logo"> -->
+                         <!-- <span style="background-color:#a5c422;padding: 10px;border-radius: 10px; color: white;">Mariya
+                              Nilayam</span></a> -->
                </div>
 
                <!-- MENU LINKS -->
@@ -330,7 +332,7 @@
 
                <div class="col-md-12">
                     <div class="readmore">
-                         <a href="service.html">Read More</a>
+                         <a class="card-info" href="service.html">Read More</a>
                     </div>
                </div>
           </div>
@@ -352,8 +354,11 @@
                          </div>
                     </div>
 
-                    <div class="col-md-4 col-sm-6">
-                         <!-- NEWS THUMB -->
+
+                    <!-- Latest News will be appended here -->
+                    <div id="latest-news-container" class="row"></div>
+
+                    <!-- <div class="col-md-4 col-sm-6">
                          <div class="news-thumb wow fadeInUp" data-wow-delay="0.4s">
                               <a href="news-detail.html">
                                    <img src="images/news-image1.jpg" class="img-responsive" alt="">
@@ -361,122 +366,25 @@
                               <div class="news-info">
                                    <span>March 08, 2025</span>
                                    <h3><a href="news-detail.html">About Amazing Technology</a></h3>
-                                   <p>Content based on the news</p>
                                    <div class="author">
-                                        <img src="images/author-image.jpg" class="img-responsive" alt="">
                                         <div class="author-info">
-                                             <h5>Doctor Name</h5>
-                                             <p>Department</p>
+                                             <h5>Author Name</h5>
+
                                         </div>
                                    </div>
                               </div>
                          </div>
-                    </div>
+                    </div> -->
 
-                    <div class="col-md-4 col-sm-6">
-                         <!-- NEWS THUMB -->
-                         <div class="news-thumb wow fadeInUp" data-wow-delay="0.6s">
-                              <a href="news-detail.html">
-                                   <img src="images/news-image2.jpg" class="img-responsive" alt="">
-                              </a>
-                              <div class="news-info">
-                                   <span>February 20, 2025</span>
-                                   <h3><a href="news-detail.html">Introducing a new healing process</a></h3>
-                                   <p>Content based on the news</p>
-                                   <div class="author">
-                                        <img src="images/author-image.jpg" class="img-responsive" alt="">
-                                        <div class="author-info">
-                                             <h5>Doctor Name</h5>
-                                             <p>Department</p>
-                                        </div>
-                                   </div>
-                              </div>
+
+                    <div class="col-md-12">
+                         <div class="readmore">
+                              <a class="card-info" href="news-detail.html">Read More</a>
                          </div>
                     </div>
-
-                    <div class="col-md-4 col-sm-6">
-                         <!-- NEWS THUMB -->
-                         <div class="news-thumb wow fadeInUp" data-wow-delay="0.8s">
-                              <a href="news-detail.html">
-                                   <img src="images/news-image3.jpg" class="img-responsive" alt="">
-                              </a>
-                              <div class="news-info">
-                                   <span>January 27, 2018</span>
-                                   <h3><a href="news-detail.html">Review Annual Medical Research</a></h3>
-                                   <p>Content based on the news</p>
-                                   <div class="author">
-                                        <img src="images/author-image.jpg" class="img-responsive" alt="">
-                                        <div class="author-info">
-                                             <h5>Doctor Name</h5>
-                                             <p>Department</p>
-                                        </div>
-                                   </div>
-                              </div>
-                         </div>
-                    </div>
-
                </div>
           </div>
      </section>
-
-
-     <!-- MAKE AN APPOINTMENT -->
-     <!-- <section id="appointment" data-stellar-background-ratio="3">
-          <div class="container">
-               <div class="row">
-
-                    <div class="col-md-6 col-sm-6">
-                         <img src="images/appointment.jpg" class="img-responsive" alt="">
-                    </div>
-
-                    <div class="col-md-6 col-sm-6">
-                   
-                         <form id="appointment-form" role="form" method="post" action="#">
-
-                            
-                              <div class="section-title wow fadeInUp" data-wow-delay="0.4s">
-                                   <h2>Make an appointment</h2>
-                              </div>
-
-                              <div class="wow fadeInUp" data-wow-delay="0.8s">
-                                   <div class="col-md-6 col-sm-6">
-                                        <label for="name">Name</label>
-                                        <input type="text" class="form-control" id="name" name="name"
-                                             placeholder="Full Name" required>
-                                   </div>
-
-                                   <div class="col-md-6 col-sm-6">
-                                        <label for="date">Select Date</label>
-                                        <input type="date" name="date" id="dateInput" value="" class="form-control"
-                                             required>
-                                   </div>
-
-                                   <div class="col-md-6 col-sm-6">
-                                        <label for="select">Select Department</label>
-                                        <select class="form-control" id="department" name="department" required>
-                                             <option>General Health</option>
-                                             <option>Cardiology</option>
-                                             <option>Dental</option>
-                                             <option>Medical Research</option>
-                                        </select>
-                                   </div>
-
-                                   <div class="col-md-12 col-sm-12">
-                                        <label for="telephone">Phone Number</label>
-                                        <input type="tel" class="form-control" id="phone" name="phone"
-                                             placeholder="Phone" required>
-                                        <button type="submit" class="form-control" id="cf-submit" name="submit">Submit
-                                             Button</button>
-                                        <p id="formMessage" style="display:none; color: green; font-weight: bold;"></p>
-
-                                   </div>
-                              </div>
-                         </form>
-                    </div>
-               </div>
-          </div>
-     </section> -->
-
 
      <!-- GOOGLE MAP -->
      <section id="google-map">
@@ -484,94 +392,24 @@
                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d493.4358468610016!2d77.0302788!3d8.3536806!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b05a8b454db8ccd%3A0x7a510a332a917f98!2sMariya%20Nilayam%20Hospital!5e0!3m2!1sen!2sin!4v1754652165898!5m2!1sen!2sin"
                width="100%" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
      </section>
-
-     <div id="footer"></div>
+     <img src="" style="object-fit: contain;">
      <!-- FOOTER -->
-     <!-- <footer data-stellar-background-ratio="5" id="footer">
-          <div class="container">
-               <div class="row">
-
-                    <div class="col-md-4 col-sm-4">
-                         <div class="footer-thumb">
-                              <h4 class="wow fadeInUp" data-wow-delay="0.4s">Contact Info</h4>
-                              <p>Update with address</p>
-
-                              <div class="contact-info">
-                                   <p><i class="fa fa-phone"></i><a href="tel:04712266065">04712 266065</a></p>
-                                   <p><i class="fa fa-envelope-o"></i> <a href="#">info@company.com</a></p>
-                              </div>
-                         </div>
-                    </div>
-
-                    <div class="col-md-4 col-sm-4">
-                         <div class="footer-thumb">
-                              <h4 class="wow fadeInUp" data-wow-delay="0.4s">Latest News</h4>
-                              <div class="latest-stories">
-                                   <div class="stories-image">
-                                        <a href="#"><img src="images/news-image.jpg" class="img-responsive" alt=""></a>
-                                   </div>
-                                   <div class="stories-info">
-                                        <a href="#">
-                                             <h5>Amazing Technology</h5>
-                                        </a>
-                                        <span>March 08, 2025</span>
-                                   </div>
-                              </div>
-
-                              <div class="latest-stories">
-                                   <div class="stories-image">
-                                        <a href="#"><img src="images/news-image.jpg" class="img-responsive" alt=""></a>
-                                   </div>
-                                   <div class="stories-info">
-                                        <a href="#">
-                                             <h5>New Healing Process</h5>
-                                        </a>
-                                        <span>February 20, 2025</span>
-                                   </div>
-                              </div>
-                         </div>
-                    </div>
-
-                    <div class="col-md-4 col-sm-4">
-                         <div class="footer-thumb">
-                              <div class="opening-hours">
-                                   <h4 class="wow fadeInUp" data-wow-delay="0.4s">Opening Hours</h4>
-                                   <p>Monday - Friday <span>10:00 AM - 04:00 PM</span></p>
-                                   <p>Saturday <span>10:00 AM - 02:00 PM</span></p>
-                                   <p>Sunday <span></span></p>
-                              </div>
-                         </div>
-                    </div>
-
-                    <div class="col-md-12 col-sm-12 border-top">
-                         <div class="col-md-4 col-sm-6">
-                              <div class="copyright-text">
-                                   <p>Copyright &copy; 2025 Mariya Nilayam Hospital
-                                        <br>| Design : <a href="#"
-                                             style="font-weight: 500; color: #0f0239;">Unb.ound</a>
-                              </div>
-                         </div>
-                         <div class="col-md-6 col-sm-6">
-                              <div class="footer-link">
-                                   <a href="#">Laboratory Tests</a>
-                                   <a href="#">Departments</a>
-                                   <a href="login.html">Admin Login</a>
-                                   <a href="#">Careers</a>
-                              </div>
-                         </div>
-                         <div class="col-md-2 col-sm-2 text-align-center">
-                              <div class="angle-up-btn">
-                                   <a href="#top" class="smoothScroll wow fadeInUp" data-wow-delay="1.2s"><i
-                                             class="fa fa-angle-up"></i></a>
-                              </div>
-                         </div>
-                    </div>
-
-               </div>
-          </div>
-     </footer> -->
+     <div id="footer"></div>
 
      <!-- SCRIPTS -->
+     <script type="module">
+          import './js/footer-news.js';
+
+          fetch("footer.html")
+               .then(res => res.text())
+               .then(data => {
+                    document.getElementById("footer").innerHTML = data;
+               });
+     </script>
+     <script type="module" src="./js/latest-news.js"></script>
+
+
+
      <script src="js/jquery.js"></script>
      <script src="js/bootstrap.min.js"></script>
      <script src="js/jquery.sticky.js"></script>

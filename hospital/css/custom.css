@@ -52,17 +52,21 @@
     font-weight: bold;
     /* font-size: 20px; */
     color: #000000;
-    font-family:'Times New Roman', Times, serif;
+    font-family: 'Times New Roman', Times, serif;
     /* optional, looks stronger */
   }
 
 
   .card-info img {
-    max-width:200px;
+    max-width: 200px;
     max-height: 100%;
   }
 
   .card-info:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  }
+
+  .logo {
+    max-width: 100px;
   }
