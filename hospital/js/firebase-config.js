@@ -6,14 +6,15 @@ import { getStorage } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-st
 
 
 // Firebase config
+
 const firebaseConfig = {
-  apiKey: "AIzaSyDbAsRzO4MH45pjWwgcyW68YHKz1wVC8iU",
-  authDomain: "hospital-abd2d.firebaseapp.com",
-  projectId: "hospital-abd2d",
-  storageBucket: "hospital-abd2d.firebasestorage.app",
-  messagingSenderId: "729243110390",
-  appId: "1:729243110390:web:46b554cdf62883689055d7",
-  measurementId: "G-0JZ3M78QN1"
+  apiKey: "AIzaSyC6ZkTsrSVj9tjZtAM8vfGx1MiTTe44nNw",
+  authDomain: "maria-nilayam.firebaseapp.com",
+  projectId: "maria-nilayam",
+  storageBucket: "maria-nilayam.firebasestorage.app",
+  messagingSenderId: "1013078111447",
+  appId: "1:1013078111447:web:d5eac0adab3a449bb82c92",
+  measurementId: "G-4KMMY7SG0N"
 };
 
 // Init Firebase
