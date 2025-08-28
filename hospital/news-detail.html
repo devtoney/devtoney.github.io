@@ -20,8 +20,9 @@
      <!-- custom css -->
      <link rel="stylesheet" href="css/custom.css">
 
+
      <!-- favicon -->
-     <link rel="icon" href="images/logo.png">
+     <link rel="icon" href="images/logopng.png">
 
      <!-- MAIN CSS -->
      <link rel="stylesheet" href="css/style.css">
@@ -95,9 +96,9 @@
                     </button>
 
                     <!-- lOGO TEXT HERE -->
-                    <a href="index.html" class="navbar-brand"><span
-                              style="background-color:#a5c422;padding: 10px;border-radius: 10px; color: white;">Mariya
-                              Nilayam</span></a>
+                    <a href="index.html" class="navbar-brand">
+                         <span><img src="images/logo.webp" alt="" class="logo"></span>
+                    </a>
                </div>
 
                <!-- MENU LINKS -->
@@ -117,14 +118,14 @@
 
 
      <!-- NEWS DETAIL -->
-     <section id="news-section">
+     <section id="news-section" style="margin-top: 50px;">
           <!-- News items will be inserted here dynamically -->
      </section>
 
      <div id="footer"></div>
 
      <script type="module">
-          import './js/footer-news.js';  // your footer news module
+          import './js/footer-news.js';  
 
           fetch("footer.html")
                .then(res => res.text())
