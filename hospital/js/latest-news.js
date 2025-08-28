@@ -24,7 +24,7 @@ onSnapshot(q, (snapshot) => {
         <div class="col-md-4 col-sm-6">
             <div class="news-thumb wow fadeInUp" data-wow-delay="0.${4 + index * 2}s">
                 <a href="news-detail.html">
-                    ${news.imageUrl ? `<img src="${news.imageUrl}" class="img-responsive" alt="${news.title}">` : ""}
+                    ${news.imageUrl ? `<img src="${news.imageUrl}" class="img-fluid" alt="${news.title}">` : ""}
                 </a>
                 <div class="news-info">
                     <span>${newsDate}</span>
