@@ -251,14 +251,6 @@
                                    <h3>Dr. Bijil Raj </h3>
                                    <h5>MBBS</h5>
                                    <p>RMO</p>
-                                   <!-- <div class="team-contact-info">
-                                        <p><i class="fa fa-phone"></i> 010-040-0140</p>
-                                        <p><i class="fa fa-envelope-o"></i> <a href="#">cardio@company.com</a></p>
-                                   </div>
-                                   <ul class="social-icon">
-                                        <li><a href="#" class="fa fa-twitter"></a></li>
-                                        <li><a href="#" class="fa fa-envelope-o"></a></li>
-                                   </ul> -->
                               </div>
 
                          </div>
@@ -273,7 +265,7 @@
 
 
      <!-- Services Section -->
-     <section id="Services" data-stellar-background-ratio="1.5">
+     <section id="Services" data-stellar-background-ratio="1.5" style="padding-top: 20px;">
           <div class="container">
                <div class="row">
                     <div class="col-md-12 col-sm-12">
@@ -351,25 +343,6 @@
                     <!-- Latest News will be appended here -->
                     <div id="latest-news-container" class="row"></div>
 
-                    <!-- <div class="col-md-4 col-sm-6">
-                         <div class="news-thumb wow fadeInUp" data-wow-delay="0.4s">
-                              <a href="news-detail.html">
-                                   <img src="images/news-image1.webp" class="img-responsive" alt="">
-                              </a>
-                              <div class="news-info">
-                                   <span>March 08, 2025</span>
-                                   <h3><a href="news-detail.html">About Amazing Technology</a></h3>
-                                   <div class="author">
-                                        <div class="author-info">
-                                             <h5>Author Name</h5>
-
-                                        </div>
-                                   </div>
-                              </div>
-                         </div>
-                    </div> -->
-
-
                     <div class="col-md-12">
                          <div class="readmore">
                               <a class="card-info" href="news-detail.html">Read More</a>
@@ -380,7 +353,7 @@
      </section>
 
      <!-- GOOGLE MAP -->
-     <section id="google-map">
+     <section id="google-map" style="padding-top: 20px;">
           <iframe
                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d493.4358468610016!2d77.0302788!3d8.3536806!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b05a8b454db8ccd%3A0x7a510a332a917f98!2sMariya%20Nilayam%20Hospital!5e0!3m2!1sen!2sin!4v1754652165898!5m2!1sen!2sin"
                width="100%" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
@@ -419,66 +392,6 @@
 
      <script type="module" src="js/firebase-config.js"></script>
      <script type="module" src="js/appointment.js"></script>
-
-     <!-- Firebase Script for appointment and details -->
-     <!-- <script>
-          const firebaseConfig = {
-               apiKey: "AIzaSyDbAsRzO4MH45pjWwgcyW68YHKz1wVC8iU",
-               authDomain: "hospital-abd2d.firebaseapp.com",
-               projectId: "hospital-abd2d",
-               storageBucket: "hospital-abd2d.firebasestorage.app",
-               messagingSenderId: "729243110390",
-               appId: "1:729243110390:web:46b554cdf62883689055d7",
-               measurementId: "G-0JZ3M78QN1"
-          };
-
-          firebase.initializeApp(firebaseConfig);
-          var db = firebase.firestore();
-
-          // Handle form submission
-          document.getElementById('appointment-form').addEventListener('submit', function (e) {
-               e.preventDefault();
-
-               // Get values 
-               const nameValue = document.getElementById("name").value;
-               const dateValue = document.getElementById("dateInput").value;
-               const departmentValue = document.getElementById("department").value;
-               const phoneValue = document.getElementById("phone").value;
-
-               // Convert to JavaScript Date object
-               const selectedDate = dateValue ? new Date(dateValue) : null;
-
-               // Add a new document with a generated ID
-               db.collection("patient").add({
-                    name: nameValue,
-                    date: selectedDate,
-                    department: departmentValue,
-                    phone: phoneValue
-               })
-                    .then(function (docRef) {
-                         // console.log("Document write id", docRef.id);
-                         // alert("Document success");
-                         // Show custom success message
-                         const msgEl = document.getElementById("formMessage");
-                         msgEl.style.color = "green";
-                         msgEl.textContent = `Appointment booked successfully for ${nameValue} in ${departmentValue} department on ${dateValue}.`;
-                         msgEl.style.display = "block";
-
-                         // Optional: reset the form
-                         document.getElementById('appointment-form').reset();
-                    })
-                    .catch(function (error) {
-                         // console.error("Error adding doc", error);
-                         console.error("Error adding document:", error);
-
-                         // Show error message
-                         const msgEl = document.getElementById("formMessage");
-                         msgEl.style.color = "red";
-                         msgEl.textContent = "Failed to save appointment. Please try again.";
-                         msgEl.style.display = "block";
-                    })
-          });
-     </script> -->
 </body>
 
 </html>

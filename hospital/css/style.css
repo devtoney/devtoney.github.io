@@ -211,7 +211,7 @@ a:focus {
 #news,
 #news-detail {
   position: relative;
-  padding-top: 100px;
+  padding-top: 20px;
   padding-bottom: 100px;
 }
 
@@ -488,7 +488,7 @@ header span i {
 }
 
 .slider .item-third {
-  background-image: url(../images/slider3.webp);
+  background-image: url(../images/banner-3.webp);
 }
 
 
