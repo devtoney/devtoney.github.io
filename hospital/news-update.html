@@ -120,8 +120,8 @@
       <label for="title">Title</label>
       <input type="text" id="title" required>
 
-      <label for="author">Short Description</label>
-      <input type="text" id="author" required>
+      <label for="subtitle">Short Description</label>
+      <input type="text" id="subtitle" required>
 
       <label for="description">Description</label>
       <textarea id="description" required></textarea>
@@ -169,7 +169,7 @@
       statusMsg.textContent = "⏳ Publishing...";
 
       const title = document.getElementById("title").value.trim();
-      const author = document.getElementById("author").value.trim();
+      const subtitle = document.getElementById("subtitle").value.trim();
       const description = document.getElementById("description").value.trim();
       const datevalue = document.getElementById("date").value;
       let imageUrl = document.getElementById("imageUrl").value.trim();
@@ -185,7 +185,7 @@
       try {
         await addDoc(collection(db, "news"), {
           title,
-          author,
+          subtitle,
           description,
           selectedDate,
           imageUrl,
@@ -224,7 +224,7 @@
         card.className = "news-card";
         card.innerHTML = `
         <h3>${news.title}</h3>
-        <p><b>Short Description:</b> ${news.author}</p>
+        <p><b>Short Description:</b> ${news.subtitle}</p>
         <p><b>Description:</b> ${news.description}</p>
         <p><b>Date:</b> ${news.selectedDate ? news.selectedDate.toDate().toLocaleDateString() : news.date}</p>
         ${news.imageUrl ? `<img src="${news.imageUrl}" alt="News image" width="200">` : ""}

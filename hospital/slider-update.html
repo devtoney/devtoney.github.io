@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- favicon -->
+    <link rel="icon" href="images/logo.webp">
+
+    <title>Add Slide</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f9f9f9;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        label {
+            display: block;
+            margin: 8px 0 4px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        textarea {
+            min-height: 80px;
+        }
+
+        button {
+            margin-top: 12px;
+            width: 100%;
+            padding: 10px;
+            background: #007bff;
+            border: none;
+            border-radius: 6px;
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        #status {
+            margin-top: 10px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .news-list {
+            max-width: 700px;
+            margin: 30px auto;
+        }
+
+        .news-card {
+            background: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .news-card h3 {
+            margin: 0 0 8px;
+            font-size: 18px;
+        }
+
+        .news-card p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+
+        .news-card small {
+            color: #555;
+            font-size: 12px;
+        }
+
+        .news-card img {
+            max-width: 100%;
+            border-radius: 6px;
+            margin-top: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <a href="admin.html">Go back</a>
+    </div>
+    <div class="container">
+        <h2>Add Slide</h2>
+        <form id="slideForm">
+            <label for="title">Slide-Title</label>
+            <input type="text" id="title" required>
+
+            <label for="subtitle">Short Description for Slide</label>
+            <input type="text" id="subtitle" required>
+
+            <label for="imageUrl">Image URL</label>
+            <input type="url" id="imageUrl" placeholder="https://drive.google.com/..." required>
+
+            <button type="submit">Publish Slide</button>
+        </form>
+        <p id="status"></p>
+    </div>
+
+    <div class="news-list" id="slidelist">
+        <h2 style="text-align:center;">All Slides</h2>
+    </div>
+
+    <!-- Firebase JS -->
+    <script type="module">
+        import { db } from './js/firebase-config.js';
+        import { collection, addDoc, serverTimestamp, query, orderBy, onSnapshot, deleteDoc, doc }
+            from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
+
+        const form = document.getElementById("slideForm");
+        const statusMsg = document.getElementById("status");
+        const slidelist = document.getElementById("slidelist");
+        // ✅ Convert Google Drive "view" link → lh3.googleusercontent link
+        function convertDriveLink(url) {
+            let match = url.match(/\/d\/([^/]+)\//);
+            if (!match) {
+                match = url.match(/[?&]id=([^&]+)/);
+            }
+            if (match && match[1]) {
+                return `https://lh3.googleusercontent.com/d/${match[1]}`;
+            }
+            return url;
+        }
+
+        //Add slide
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            statusMsg.textContent = "⏳ Publishing...";
+
+            const title = document.getElementById("title").value.trim();
+            const subtitle = document.getElementById("subtitle").value.trim();
+            let imageUrl = document.getElementById("imageUrl").value.trim();
+
+            if (imageUrl.includes("drive.google.com")) {
+                imageUrl = convertDriveLink(imageUrl);
+            }
+
+            try {
+                await addDoc(collection(db, "slide"), {
+                    title,
+                    subtitle,
+                    imageUrl,
+                    createdAt: serverTimestamp()
+                });
+                statusMsg.textContent = "✅ Slide added !";
+                form.reset();
+            } catch (error) {
+                console.error("Error:", error);
+                statusMsg.textContent = "❌ " + error.message;
+            }
+        });
+
+        // ✅ Delete Slider
+        async function deleteSlide(id) {
+            const confirmDelete = confirm("Are you sure you want to delete this Slide?");
+            if (!confirmDelete) return;
+
+            try {
+                await deleteDoc(doc(db, "slide", id));
+                alert("🗑️ Slide deleted successfully!");
+            } catch (error) {
+                console.error("Error deleting:", error);
+                alert("❌ Failed to delete Slide: " + error.message);
+            }
+        }
+        // ✅ Load all slide in timestamp order
+        const q = query(collection(db, "slide"), orderBy("createdAt", "desc"));
+        onSnapshot(q, (snapshot) => {
+            slidelist.innerHTML = "<h2 style='text-align:center;'>All Slide</h2>";
+            snapshot.forEach((docSnap) => {
+                const slide = docSnap.data();
+                const card = document.createElement("div");
+                card.className = "news-card";
+                card.innerHTML = `
+                <h3>${slide.title}</h3>
+                <p><b>Short Description:</b> ${slide.subtitle}</p>
+                 ${slide.imageUrl ? `<img src="${slide.imageUrl}" alt="News image" width="200">` : ""}
+                 <small>updated date: 🕒 ${slide.createdAt?.toDate().toLocaleString() || "Just now"}</small>
+                 <br>
+                 <button onclick="deleteSlide('${docSnap.id}')"
+                 style="margin-top:8px; padding:6px 10px; background:red; color:white; border:none; border-radius:4px; cursor:pointer;">
+                 Delete
+                 </button>
+                 `;
+                slidelist.appendChild(card);
+            });
+        });
+
+        // Expose delete function globally (needed for inline onclick)
+        window.deleteSlide = deleteSlide;
+    </script>
+</body>
+
+</html>

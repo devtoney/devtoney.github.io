@@ -29,9 +29,9 @@ onSnapshot(q, (snapshot) => {
                 <div class="news-info">
                     <span>${newsDate}</span>
                     <h3><a href="news-detail.html">${news.title || "No Title"}</a></h3>
-                    <div class="author">
-                        <div class="author-info">
-                            <h5>${news.author || "Unknown Author"}</h5>
+                    <div class="subtitle">
+                        <div class="subtitle-info">
+                            <h5>${news.subtitle || "Unknown subtitle"}</h5>
                         </div>
                     </div>
                 </div>
