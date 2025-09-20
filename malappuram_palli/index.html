@@ -36,6 +36,7 @@
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="assets/css/owl.css">
   <link rel="stylesheet" href="assets/css/lightbox.css">
+  <link rel="stylesheet" href="assets/css/custom.css">
 
 </head>
 
@@ -92,6 +93,9 @@
               </li>
               <li class="scroll-to-section"><a href="administration.html">Administration</a></li>
               <li class="scroll-to-section"><a href="gallery.html">Gallery</a></li>
+              <li><a href="javascript:void(0);" onclick="handlePayment()">
+                  Online Offerings
+                </a></li>
             </ul>
             <a class='menu-trigger'>
               <span>Menu</span>
@@ -103,6 +107,17 @@
     </div>
   </header>
   <!-- ***** Header Area End ***** -->
+
+  <!-- *****UPI QR CODE***** -->
+  <div id="upiPopup" class="popup">
+    <div class="popup-content">
+      <p>Scan this QR to pay:</p>
+      <img src="assets/images/qr-code.png" alt="UPI QR Code">
+      <br>
+      <button class="close-btn" onclick="closePopup()">Close</button>
+    </div>
+  </div>
+  <!-- ****UPI QR CODE ENDS**** -->
 
   <!-- ***** Main Banner Area Start ***** -->
   <section class="section main-banner" id="top" data-section="section1">
@@ -117,7 +132,7 @@
             <div class="caption">
               <h6>ആവിലായിലെ</h6>
               <h2> വി. അമ്മത്രേസ്യയുടെ </h2>
-              <p>നാമധായത്തിൽ ഉള്ള <span style="color: rgb(255, 187, 0);">മലപ്പുറം പള്ളിയിലേക്ക് </span> സ്വാഗതം.</p>
+              <p>നാമധേയത്തിലുളള <span style="color: rgb(255, 187, 0);">മലപ്പുറം പള്ളിയിലേക്ക് </span> സ്വാഗതം.</p>
               <!-- <div class="main-button-red">
                 <div class="scroll-to-section"><a href="#contact">Join Us Now!</a></div>
               </div> -->
@@ -840,6 +855,27 @@
   <script src="assets/js/video.js"></script>
   <script src="assets/js/slick-slider.js"></script>
   <script src="assets/js/custom.js"></script>
+
+  <!-- Check is mobile -->
+  <script>
+    function isMobile() {
+      return /Android|iPhone|iPad|iPod|Windows Phone/i.test(navigator.userAgent);
+    }
+
+    function handlePayment() {
+      if (isMobile()) {
+        // Mobile redirect
+        window.location.href = "upi://pay?pa=8281636175@upi&cu=INR";
+      } else {
+        // Show desktop popup
+        document.getElementById("upiPopup").style.display = "flex";
+      }
+    }
+
+    function closePopup() {
+      document.getElementById("upiPopup").style.display = "none";
+    }
+  </script>
   <script>
     //according to loftblog tut
     $('.nav li:first').addClass('active');
