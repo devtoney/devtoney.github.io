@@ -45,3 +45,27 @@
     border-radius: 6px;
     cursor: pointer;
 }
+
+/* END OF THE ONLINE OFFERING */
+
+/* church administration */
+#church-administration p {
+    text-align: center;
+    width: 100%;
+    font-size: 32px;
+    font-family: 'FontAwesome';
+    padding: 20px;
+}
+
+#church-administration img {
+    padding: 20px;
+    max-width: 500px;
+}
+
+
+@media (max-width: 767px) {
+    #church-administration img {
+
+    }
+
+}
