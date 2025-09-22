@@ -106,13 +106,50 @@
     padding: 10px;
 }
 
-#history img{
+#history img {
     max-width: 250px;
     text-align: center;
     align-items: center;
 }
+
+.menu-links {
+    list-style: none;
+    margin: 0;
+    display: flex;
+    gap: 0.75rem;
+    padding: 10px 10px;
+    /* background-color: #432818; */
+}
+
+.menu-links li {
+    display: flex;
+    align-items: center;
+}
+
+.menu-links li:not(:last-child)::after {
+    content: "/";
+    margin-left: 0.75rem;
+    color: #FFE6A7;
+    /* different color for slash */
+    font-weight: bold;
+    /* make it stand out */
+}
+
+.menu-links a {
+    text-decoration: none;
+    color: #99582A
+}
+
+.menu-links a:hover {
+    color: #BB9457;
+}
+
 /* ****END OF HISTORY**** */
 
 
 /* ****For mobile view**** */
-@media (max-width: 767px) {}
+@media (max-width: 767px) {
+    #historymenu {
+        display: none;
+    }
+}
