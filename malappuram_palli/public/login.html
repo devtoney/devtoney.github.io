@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Toney Abraham">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+    <title>Malappuram Palli | Admin Login</title>
+
+
+    <style>
+        #login {
+            color: white;
+            text-align: center;
+        }
+
+        #login h4 {
+            font-weight: 500;
+            font-size: 32px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        label {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 14px;
+            color: #FFE6A7;
+            font-weight: 700;
+        }
+
+        input {
+            border-radius: 5px;
+            background-color: white;
+            color: #6F1D1B;
+            width: 100%;
+        }
+
+        .subbutton {
+            background-color: #99582A;
+            border: none;
+            width: 100px;
+            padding: 8px;
+            border-radius: 10px;
+            color: #f9f9f9;
+        }
+
+        .subbutton:hover {
+            box-shadow: 3px 3px 10px #000000;
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background: #fff;
+            margin: 15% auto;
+            padding: 20px;
+            width: 300px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .closeBtn {
+            float: right;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        a {
+            text-decoration: none;
+            color: #b81717;
+        }
+
+        a:hover {
+            color: #BB9457;
+        }
+    </style>
+</head>
+
+<body style="background-color: #432818;">
+    <div style="padding: 20px;margin-left: 20px;"><a href="index.html">Go to Home</a></div>
+    <div style="text-align: center;">
+        <h2 style="color: white;">Admin Login</h2>
+    </div>
+    <div style="display: flex;justify-content: center;">
+        <div style="padding: 20px;margin: 20px;text-align: justify;width: 70vw;">
+            <label for="email">Email: </label>
+            <p id="emailError" style="color: red; font-size: 14px; margin: 5px 0; display: none;"></p>
+
+            <div style="height: 10px;"></div>
+            <input type="email" id="email"><br><br>
+            <label for="password">Password: </label>
+            <p id="passError" style="color: red; font-size: 14px; margin: 5px 0; display: none;"></p>
+            <div style="height: 10px;"></div>
+            <input type="password" id="password">
+            <i id="togglePassword" class="fa-solid fa-eye-slash" style="color: #FFE6A7;margin-top: 10px;"></i>
+            <br><br>
+            <div style="display: flex;justify-content: center;">
+                <button class="subbutton" id="loginBtn">Login</button>
+            </div>
+            <div style="margin-top: 30px;text-align: center;">
+                <p><a href="#" id="forgotPasswordLink">Forgot Password?</a></p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- Custom Popup -->
+    <div id="forgotPasswordModal" class="modal">
+        <div class="modal-content">
+            <span class="closeBtn">&times;</span>
+            <h2>Reset Password</h2>
+            <p>Enter your email address to receive a password reset link.</p>
+            <input type="email" id="resetEmail" placeholder="Enter your email">
+            <div style="height: 10px;"></div>
+            <button class="subbutton" style="width: 150px;" id="sendResetEmail">Send Reset Link</button>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer
+        style="background-color: black;color: white; padding: 20px 0; text-align: center; font-family: Arial, sans-serif;height: 150px;">
+        <div class="container">
+            <p>Developed by <a href="https://toneyabraham37.github.io/" target="_blank" style="color: inherit;">
+                    Toney Abraham</a> | © ST. THERESA'S CHURCH, MALAPPURAM</p>
+        </div>
+    </footer>
+    <!-- Scripts -->
+    <!-- Custom Scripts -->
+    <script>
+        const passwordInput = document.getElementById("password");
+        const toggleIcon = document.getElementById("togglePassword");
+
+        toggleIcon.addEventListener("click", function () {
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                toggleIcon.classList.remove("fa-eye-slash");
+                toggleIcon.classList.add("fa-eye");
+            } else {
+                passwordInput.type = "password";
+                toggleIcon.classList.remove("fa-eye");
+                toggleIcon.classList.add("fa-eye-slash");
+            }
+        });
+    </script>
+    <!-- fontawsome kit -->
+    <script src="https://kit.fontawesome.com/1f8fcc82f7.js" crossorigin="anonymous"></script>
+
+    <!-- Firebase JS -->
+    <script type="module">
+        import { auth, db } from './assets/js/firebase-config.js';
+        import { getAuth, signInWithEmailAndPassword, sendPasswordResetEmail, fetchSignInMethodsForEmail } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
+
+        document.getElementById("loginBtn").addEventListener("click", () => {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            signInWithEmailAndPassword(auth, email, password)
+                .then(() => {
+                    // alert("Login successful");
+                    window.location.href = "admin.html";
+                })
+                .catch(err => {
+                    // alert(err.message)
+                    const emailError = document.getElementById("emailError");
+                    const passError = document.getElementById("passError");
+
+                    if (err.code === "auth/invalid-email") {
+                        emailError.textContent = "Invalid Email";
+                        emailError.style.display = "block";
+                    } else if (err.code === "auth/invalid-login-credentials") {
+                        passError.textContent = "Invalid Password";
+                        passError.style.display = "block";
+                    } else {
+                        alert(err.message)
+                    }
+                });
+        });
+
+
+        const forgotPasswordLink = document.getElementById('forgotPasswordLink');
+        const forgotPasswordModal = document.getElementById('forgotPasswordModal');
+        const closeBtn = document.querySelector('.closeBtn');
+        const sendResetEmailBtn = document.getElementById('sendResetEmail');
+        const resetEmailInput = document.getElementById('resetEmail');
+
+        // Open modal
+        forgotPasswordLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            forgotPasswordModal.style.display = 'block';
+        });
+
+        // Close modal
+        closeBtn.addEventListener('click', () => {
+            forgotPasswordModal.style.display = 'none';
+        });
+
+        // Close if clicked outside modal
+        window.addEventListener('click', (e) => {
+            if (e.target === forgotPasswordModal) {
+                forgotPasswordModal.style.display = 'none';
+            }
+        });
+
+        // Send reset email
+        sendResetEmailBtn.addEventListener('click', () => {
+            const email = resetEmailInput.value.trim();
+            if (!email) {
+                alert("Please enter your email.");
+                return;
+            }
+
+            sendPasswordResetEmail(auth, email)
+                .then(() => {
+                    alert("Password reset email sent!");
+                    forgotPasswordModal.style.display = 'none';
+                })
+                .catch((error) => {
+                    alert("Error: " + error.message);
+                });
+        });
+    </script>
+</body>
+
+</html>

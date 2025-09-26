@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Toney Abraham">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+    <title>Malappuram Palli | Admin Page</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+    <link rel="stylesheet" href="assets/css/lightbox.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+
+    <style>
+        .subbutton {
+            background-color: #99582A;
+            color: whitesmoke;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            border: none;
+            font-size: 18px;
+            padding: 10px;
+            width: 100px;
+            border-radius: 10px;
+
+        }
+
+        .subbutton:hover {
+            box-shadow: 3px 3px 10px black;
+        }
+    </style>
+</head>
+
+<body style="background-color: #432818;color: white;padding: 20px;" id="bodyContent">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12" style="text-align: center;padding: 20px;margin-top: 20px;">
+                <h2>ST. Theresa's Church, Malappuram</h1>
+            </div>
+        </div>
+        <div class="row" style="padding: 10px;align-items: left;margin-top: 10px;">
+            <div class="col-md-3">
+                <button class="subbutton" id="logoutBtn">Logout</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12" style="align-items: center;text-align: center;">
+                <img src="./assets/images/st.theresa_2.jpeg" alt="ST. Theresa " style="width: 250px;">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div>
+                    <button class="subbutton" id="ParishBtn" style="width: 200px;margin-bottom: 20px;margin-top: 10px;">
+                        Add Parish-Counsil</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer
+        style="background-color: black;color: white; padding: 20px 0; text-align: center; font-family: Arial, sans-serif;height: 150px;">
+        <div class="container">
+            <p>Developed by <a href="https://toneyabraham37.github.io/" target="_blank" style="color: inherit;">
+                    Toney Abraham</a> | © ST. THERESA'S CHURCH, MALAPPURAM</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <!-- Firebase JS -->
+    <script type="module">
+        import { auth, db } from './assets/js/firebase-config.js';
+        import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
+        // import { collection, getDocs, updateDoc, doc } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
+        // Check login
+        onAuthStateChanged(auth, (user) => {
+            if (!user) {
+                window.location.href = "login.html";
+            } else {
+                document.getElementById("bodyContent").style.display = "block";
+            }
+        });
+
+        // Logout
+        document.getElementById("logoutBtn").addEventListener("click", () => {
+            signOut(auth).then(() => {
+                window.location.href = "login.html";
+            });
+        });
+        document.getElementById("ParishBtn").addEventListener("click", () => {
+            window.location.href = "add-parish.html"
+        })
+    </script>
+
+</body>
+
+</html>
