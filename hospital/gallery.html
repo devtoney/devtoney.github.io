@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Gallery | Maria Nilayam Hospital</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="Toney Abraham">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+    <!-- favicon -->
+    <link rel="icon" href="images/logo_fav.png">
+
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="css/custom.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        .gallery-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 25px;
+            background: #fafafa;
+        }
+
+        .gallery-card h3 {
+            margin-bottom: 15px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .gallery-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 15px;
+        }
+
+        .gallery-image-wrapper {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        .gallery-image-wrapper img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+            border-radius: 8px;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .gallery-image-wrapper:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Magnifier icon */
+        .magnifier {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 28px;
+            color: white;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 10px;
+            border-radius: 20%;
+            opacity: 0;
+            transition: opacity 0.3s;
+            cursor: pointer;
+        }
+
+        .gallery-image-wrapper:hover .magnifier {
+            opacity: 1;
+        }
+
+        /* Modal styles */
+        #imageModal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            padding: 20px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background: rgba(0, 0, 0, 0.9);
+        }
+
+        #imageModal img {
+            display: block;
+            max-width: 90%;
+            max-height: 80%;
+            margin: 50px auto;
+            border-radius: 8px;
+        }
+
+        #imageModal span {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
+
+    <section class="preloader1">
+        <video autoplay muted loop playsinline>
+            <source src="images/loading.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </section>
+
+    <!-- HEADER -->
+    <header>
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-4 col-sm-5">
+                    <p style="font-weight: 500;">"We foster integrated health for all while empowering the vulnerable,
+                        women and children"
+                    </p>
+                </div>
+
+                <div class="col-md-8 col-sm-7 text-align-right">
+                    <span class="phone-icon"><i class="fa fa-phone"></i><a href="tel:+04712266065">24x7 Emergency:
+                            04712 266065</a></span>
+                    <!-- <span class="date-icon"><i class="fa fa-calendar-plus-o"></i>24/7</span> -->
+                    <span class="email-icon"><i class="fa fa-envelope-o"></i> <a
+                            href="mailto:marianilayamhospital@gmail.com">marianilayamhospital@gmail.com</a></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MENU -->
+    <section class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="container">
+
+            <div class="navbar-header">
+                <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon icon-bar"></span>
+                    <span class="icon icon-bar"></span>
+                    <span class="icon icon-bar"></span>
+                </button>
+
+                <!-- lOGO TEXT HERE -->
+                <a href="index.html" class="navbar-brand">
+                    <span><img src="images/logo.png" alt="" class="logo"></span>
+                </a>
+            </div>
+
+            <!-- MENU LINKS -->
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <!-- <li><a href="index.html" class="smoothScroll">Home</a></li> -->
+                    <!-- <li><a href="index.html#departments" class="smoothScroll">Departments</a></li> -->
+                    <li><a href="index.html#doctors" class="smoothScroll">Doctors</a></li>
+                    <li><a href="service.html">Service</a></li>
+                    <li><a href="news-detail.html" class="smoothScroll">News</a></li>
+                    <li><a href="index.html#google-map" class="smoothScroll">Contact</a></li>
+                    <li><a href="about.html" class="smoothScroll">About Us</a></li>
+                    <li class="appointment-btn"><a href="appointment.html">Make an appointment</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery-section" style="margin-top: 50px;">
+        <div class="container">
+            <div id="gallery-list"></div>
+        </div>
+    </section>
+
+    <!-- Popup Modal -->
+    <div id="imageModal">
+        <span id="closeModal">&times;</span>
+        <img id="modalImage" src="">
+    </div>
+
+    <div id="footer"></div>
+
+    <script type="module">
+        import './js/footer-news.js';  // your footer news module
+
+        fetch("footer.html")
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById("footer").innerHTML = data;
+            });
+    </script>
+
+    <!-- SCRIPTS -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/smoothscroll.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/custom.js"></script>
+
+
+    <script type="module">
+        import { db } from './js/firebase-config.js';
+        import { collection, query, orderBy, onSnapshot }
+            from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
+
+        const galleryList = document.getElementById("gallery-list");
+        const imageModal = document.getElementById("imageModal");
+        const modalImage = document.getElementById("modalImage");
+        const closeModal = document.getElementById("closeModal");
+
+        const q = query(collection(db, "gallery"), orderBy("createdAt", "desc"));
+        onSnapshot(q, (snapshot) => {
+            galleryList.innerHTML = "<h2 style='text-align:center;'>Gallery</h2>";
+
+            snapshot.forEach((docSnap) => {
+                const gallery = docSnap.data();
+                const card = document.createElement("div");
+                card.className = "gallery-card";
+
+                let imagesHTML = "";
+                if (gallery.imageUrls && gallery.imageUrls.length > 0) {
+                    imagesHTML = `
+                        <div class="gallery-images">
+                          ${gallery.imageUrls.map(url => `
+                            <div class="gallery-image-wrapper">
+                              <img src="${url}" alt="Gallery image" onclick="openImageModal('${url}')">
+                              <div class="magnifier" onclick="openImageModal('${url}')">
+                                <i class="fa fa-search-plus"></i>
+                              </div>
+                            </div>
+                          `).join("")}
+                        </div>
+                    `;
+                }
+
+                card.innerHTML = `
+                    <h3>${gallery.title || ""}</h3>
+                    ${imagesHTML}
+                `;
+
+                galleryList.appendChild(card);
+            });
+        });
+
+        // ✅ Modal functions
+        window.openImageModal = function (url) {
+            modalImage.src = url;
+            imageModal.style.display = "block";
+        }
+
+        closeModal.onclick = () => {
+            imageModal.style.display = "none";
+        }
+
+        window.onclick = (event) => {
+            if (event.target === imageModal) {
+                imageModal.style.display = "none";
+            }
+        }
+    </script>
+    <!-- <script type="module">
+        import { db } from './js/firebase-config.js';
+        import { collection, query, orderBy, onSnapshot } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
+
+        const newsSection = document.getElementById("gallery-section");
+
+        const q = query(collection(db, "news"), orderBy("createdAt", "desc"));
+
+        onSnapshot(q, (snapshot) => {
+            newsSection.innerHTML = ""; // clear previous content
+
+            snapshot.forEach((docSnap) => {
+                const news = docSnap.data();
+                const formattedDate = news.selectedDate
+                    ? new Date(news.selectedDate.seconds * 1000).toLocaleDateString()
+                    : news.date || "";
+
+                const newsHTML = `
+      <section class="news-detail" data-stellar-background-ratio="0.5">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8 col-sm-7">
+              <div class="news-detail-thumb">
+                <div class="news-image">
+                  ${news.imageUrl ? `<img src="${news.imageUrl}" class="img-responsive" alt="${news.title}">` : ""}
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-5">
+              <div class="news-sidebar">
+                <div class="news-author">
+                  <h4>Short Description</h4>
+                  <p>${news.subtitle || "Unknown Data"}</p>
+                </div>
+                <div class="recent-post">
+                  <h4>DATE of Publication</h4>
+                  <div class="media">
+                    <div class="media-body">
+                      <h4 class="media-heading">${formattedDate}</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+               <h3>${news.title || "No Title"}</h3>
+               <p>${news.description || "No Description"}</p></div>
+          </div>
+        </div>
+      </section>
+    `;
+
+                newsSection.insertAdjacentHTML("beforeend", newsHTML);
+            });
+        });
+
+    </script> -->
+
+</body>
+
+</html>

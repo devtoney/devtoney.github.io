@@ -3,7 +3,7 @@
 
 <head>
 
-     <title>Maria Nilayam Hospital</title>
+     <title>News | Maria Nilayam Hospital</title>
      <meta charset="UTF-8">
      <meta http-equiv="X-UA-Compatible" content="IE=Edge">
      <meta name="description" content="">
@@ -22,7 +22,7 @@
 
 
      <!-- favicon -->
-     <link rel="icon" href="images/logo.webp">
+     <link rel="icon" href="images/logo_fav.png">
 
      <!-- MAIN CSS -->
      <link rel="stylesheet" href="css/style.css">
@@ -55,13 +55,15 @@
 </head>
 
 <body id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
-     <!-- <section class="preloader">
-        <div class="spinner">
-
+     <section class="preloader1">
+          <video autoplay muted loop playsinline>
+               <source src="images/loading.mp4" type="video/mp4">
+               Your browser does not support the video tag.
+          </video>
+          <!-- <div class="spinner">
             <span class="spinner-rotate"></span>
-
-        </div>
-    </section> -->
+        </div> -->
+     </section>
      <!-- HEADER -->
      <header>
           <div class="container">
@@ -74,9 +76,9 @@
                     </div>
 
                     <div class="col-md-8 col-sm-7 text-align-right">
-                         <span class="phone-icon"><i class="fa fa-phone"></i><a href="tel:+04712266065">04712
-                                   266065</a></span>
-                         <span class="date-icon"><i class="fa fa-calendar-plus-o"></i>24/7</span>
+                         <span class="phone-icon"><i class="fa fa-phone"></i><a href="tel:+04712266065">24x7 Emergency:
+                                   04712 266065</a></span>
+                         <!-- <span class="date-icon"><i class="fa fa-calendar-plus-o"></i>24/7</span> -->
                          <span class="email-icon"><i class="fa fa-envelope-o"></i> <a
                                    href="mailto:marianilayamhospital@gmail.com">marianilayamhospital@gmail.com</a></span>
                     </div>
@@ -98,7 +100,7 @@
 
                     <!-- lOGO TEXT HERE -->
                     <a href="index.html" class="navbar-brand">
-                         <span><img src="images/logo.webp" alt="" class="logo"></span>
+                         <span><img src="images/logo.png" alt="" class="logo"></span>
                     </a>
                </div>
 
@@ -110,6 +112,7 @@
                          <li><a href="service.html" class="smoothScroll">Services</a></li>
                          <!-- <li><a href="news.html" class="smoothScroll">News</a></li> -->
                          <li><a href="index.html#google-map" class="smoothScroll">Contact</a></li>
+                         <li><a href="gallery.html">Gallery</a></li>
                          <li><a href="about.html" class="smoothScroll">About Us</a></li>
                          <li class="appointment-btn"><a href="appointment.html">Make an appointment</a></li>
                     </ul>
@@ -126,7 +129,7 @@
      <div id="footer"></div>
 
      <script type="module">
-          import './js/footer-news.js';  
+          import './js/footer-news.js';
 
           fetch("footer.html")
                .then(res => res.text())

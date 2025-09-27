@@ -80,6 +80,22 @@
    height: 120px;
  }
 
+ .preloader video {
+   width: 200px;
+   /* adjust as needed */
+   height: auto;
+ }
+
+ .preloader1 video {
+   width: 200px;
+   /* adjust as needed */
+   height: auto;
+ }
+
+ #latest-news-container .item {
+   padding: 10px;
+ }
+
  @media screen and (max-width: 767px) {
    .navbar-collapse {
      margin-top: 60px;

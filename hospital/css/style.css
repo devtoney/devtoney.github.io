@@ -245,6 +245,20 @@ a:focus {
   background: none repeat scroll 0 0 #ffffff;
 }
 
+.preloader1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99999;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  background: none repeat scroll 0 0 #ffffff;
+}
+
 .spinner {
   border: 1px solid transparent;
   border-radius: 3px;
@@ -450,7 +464,7 @@ header span i {
   background: transparent;
   display: block;
   -webkit-backface-visibility: visible;
-  transition: opacity 200ms ease;
+  transition: opacity 100ms ease;
   border-radius: 30px;
 }
 
@@ -461,17 +475,25 @@ header span i {
 }
 
 .slider .caption {
+  position: absolute;
   display: flex;
   justify-content: center;
   flex-direction: column;
   text-align: center;
-  background-color: rgba(20, 20, 20, 0.2);
+  /* background-color: rgba(20, 20, 20, 0.2); */
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
   height: 100%;
   color: #fff;
   cursor: e-resize;
+  z-index: 2;
 }
 
 .slider .item {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
   background-position: inherit;
   background-repeat: no-repeat;
   background-attachment: local;
@@ -479,17 +501,56 @@ header span i {
   height: 650px;
 }
 
-.slider .item-first {
-  background-image: url(../images/banner-1.webp);
+/* Foreground image */
+.slide-img {
+  width: 100%;
+  border-radius: 20px;
+  padding: 10px;
+  display: block;
+  margin: 0 auto;
+  z-index: 1;
 }
 
-.slider .item-second {
-  background-image: url(../images/banner-2.webp);
+/* Desktop view (screen wider than 768px) */
+@media (min-width: 768px) {
+  .slide-img {
+    max-width: 600px;
+    /* control image size on desktop */
+    width: 100%;
+    /* shrink it relative to carousel */
+  }
 }
 
-.slider .item-third {
-  background-image: url(../images/banner-3.webp);
+/* Large screens (1200px and up) */
+@media (min-width: 1200px) {
+  .slide-img {
+    max-width: 900px;
+    /* optional, bigger but still capped */
+    width: 100%;
+  }
 }
+
+
+/* Blurred background behind everything */
+.bg-blr {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  filter: blur(15px) brightness(0.6);
+  transform: scale(1.1);
+  /* prevent blur edges showing */
+  z-index: 0;
+}
+
+/* @media (max-width: 768px) {
+  .slider .item {
+    height: 400px;
+  }
+} */
 
 
 /*---------------------------------------

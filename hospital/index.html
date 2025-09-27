@@ -4,12 +4,25 @@
 <head>
 
      <title>Maria Nilayam Hospital</title>
+
+     <!-- Meta Data -->
      <meta charset="UTF-8">
      <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-     <meta name="description" content="">
-     <meta name="keywords" content="">
+     <meta name="description"
+          content="Where compassion meets care and healing becomes grace — providing holistic, heartfelt medical support to nurture health and restore hope.">
+     <meta name="keywords"
+          content="maria nilayam, hospital, thiruvananthapuram, best hospital, adimalthura, marianilayam hospital">
      <meta name="author" content="Toney Abraham">
      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+     <!-- Open Graph -->
+     <meta property="og:type" content="website">
+     <meta property="og:site_name" content="Maria Nilayam Hospital">
+     <meta property="og:title" content="Maria Nilayam Hospital">
+     <meta property="og:description" content="Compassionate medical care in Adimalathura, Thiruvananthapuram.">
+     <meta property="og:image" content="https://www.marianilayam.in/images/logo.png">
+     <meta property="og:url" content="https://www.marianilayam.in/">
+
 
      <link rel="stylesheet" href="css/bootstrap.min.css">
      <link rel="stylesheet" href="css/font-awesome.min.css">
@@ -21,10 +34,31 @@
      <link rel="stylesheet" href="css/custom.css">
 
      <!-- favicon -->
-     <link rel="icon" href="images/logopng.png">
+     <!-- <link rel="icon" href="images/logo_fav.png"> -->
+     <!-- Favicon -->
+     <link rel="icon" href="/favicon.ico" type="image/x-icon">
+     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
+     <!-- Optional PNG sizes -->
+     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+     <!-- Apple/Android -->
+     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+     <link rel="manifest" href="/site.webmanifest">
      <!-- MAIN CSS -->
      <link rel="stylesheet" href="css/style.css">
+
+     <!-- Load main CSS async -->
+     <link rel="preload" href="css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+     <noscript>
+          <link rel="stylesheet" href="css/bootstrap.min.css">
+     </noscript>
+
+     <link rel="preload" href="css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+     <noscript>
+          <link rel="stylesheet" href="css/style.css">
+     </noscript>
 
 </head>
 
@@ -32,11 +66,10 @@
 
      <!-- PRE LOADER -->
      <section class="preloader">
-          <div class="spinner">
-
-               <span class="spinner-rotate"></span>
-
-          </div>
+          <video autoplay muted loop playsinline>
+               <source src="images/loading.mp4" type="video/mp4">
+               Your browser does not support the video tag.
+          </video>
      </section>
 
 
@@ -51,15 +84,16 @@
                     </div>
 
                     <div class="col-md-8 col-sm-7 text-align-right">
-                         <span class="phone-icon"><i class="fa fa-phone"></i><a href="tel:+04712266065">04712
-                                   266065</a></span>
-                         <span class="date-icon"><i class="fa fa-calendar-plus-o"></i>24/7</span>
+                         <span class="phone-icon"><i class="fa fa-phone"></i><a href="tel:+04712266065">24x7 Emergency:
+                                   04712 266065</a></span>
+                         <!-- <span class="date-icon"><i class="fa fa-calendar-plus-o"></i>24x7</span> -->
                          <span class="email-icon"><i class="fa fa-envelope-o"></i> <a
                                    href="mailto:marianilayamhospital@gmail.com">marianilayamhospital@gmail.com</a></span>
                     </div>
                </div>
           </div>
      </header>
+
 
      <!-- MENU -->
      <section class="navbar navbar-default navbar-static-top" role="navigation">
@@ -73,7 +107,7 @@
                     </button>
 
                     <a href="#top" class="navbar-brand">
-                         <span><img src="images/logo.webp" alt="" class="logo"></span>
+                         <span><img src="images/logo.png" alt="" class="logo"></span>
                     </a>
 
                </div>
@@ -83,6 +117,7 @@
                          <li><a href="#Services" class="smoothScroll">Services</a></li>
                          <li><a href="#news" class="smoothScroll">News</a></li>
                          <li><a href="#google-map" class="smoothScroll">Contact</a></li>
+                         <li><a href="gallery.html">Gallery</a></li>
                          <li><a href="about.html" class="smoothScroll">About Us</a></li>
                          <li class="appointment-btn"><a href="appointment.html">Make an appointment</a></li>
                     </ul>
@@ -212,6 +247,32 @@
                     </div>
 
                     <div class="col-md-4 col-sm-6">
+                         <div class="team-thumb wow fadeInUp" data-wow-delay="0.6s">
+                              <img src="images/samjo.jpg" class="img-responsive" alt="Dr. Samjo Shaj">
+
+                              <div class="team-info">
+                                   <h3>Dr. Samjo Shaj</h3>
+                                   <h5>MBBS</h5>
+                                   <p>RMO</p>
+                              </div>
+
+                         </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                         <div class="team-thumb wow fadeInUp" data-wow-delay="0.6s">
+                              <img src="images/bijil.jpg" class="img-responsive" alt="Dr. Bijil">
+
+                              <div class="team-info">
+                                   <h3>Dr. Bijil Raj</h3>
+                                   <h5>MBBS</h5>
+                                   <p>RMO</p>
+                              </div>
+
+                         </div>
+                    </div>
+               </div>
+               <!-- <div class="row">
+                    <div class="col-md-4 col-sm-6">
                          <div class="team-thumb wow fadeInUp" data-wow-delay="0.4s">
                               <img src="images/doc.webp" class="img-responsive" alt="">
 
@@ -219,56 +280,10 @@
                                    <h3>Dr. Vijaya Ratnam Kandangath</h3>
                                    <h5>MBBS, DMRD</h5>
                                    <p>Radiologist </p>
-                                   <!-- <div class="team-contact-info">
-                                        <p><i class="fa fa-phone"></i> 010-070-0170</p>
-                                        <p><i class="fa fa-envelope-o"></i> <a href="#">pregnancy@company.com</a></p>
-                                   </div>
-                                   <ul class="social-icon">
-                                        <li><a href="#" class="fa fa-facebook-square"></a></li>
-                                        <li><a href="#" class="fa fa-envelope-o"></a></li>
-                                        <li><a href="#" class="fa fa-flickr"></a></li>
-                                   </ul> -->
                               </div>
-
                          </div>
                     </div>
-
-                    <div class="col-md-4 col-sm-6">
-                         <div class="team-thumb wow fadeInUp" data-wow-delay="0.6s">
-                              <img src="images/samjo.jpg" class="img-responsive" alt="Dr. Samjo Shaji">
-
-                              <div class="team-info">
-                                   <h3>Dr. Samjo Shaji</h3>
-                                   <h5>MBBS</h5>
-                                   <p>RMO</p>
-                                   <!-- <div class="team-contact-info">
-                                        <p><i class="fa fa-phone"></i> 010-040-0140</p>
-                                        <p><i class="fa fa-envelope-o"></i> <a href="#">cardio@company.com</a></p>
-                                   </div>
-                                   <ul class="social-icon">
-                                        <li><a href="#" class="fa fa-twitter"></a></li>
-                                        <li><a href="#" class="fa fa-envelope-o"></a></li>
-                                   </ul> -->
-                              </div>
-
-                         </div>
-                    </div>
-               </div>
-               <div class="row">
-                    <div class="col-md-4 col-sm-6">
-                         <div class="team-thumb wow fadeInUp" data-wow-delay="0.6s">
-                              <img src="images/doc.webp" class="img-responsive" alt="">
-
-                              <div class="team-info">
-                                   <h3>Dr. Bijil Raj </h3>
-                                   <h5>MBBS</h5>
-                                   <p>RMO</p>
-                              </div>
-
-                         </div>
-                    </div>
-
-               </div>
+               </div> -->
           </div>
           <!-- Space filler  -->
           <div style="height: 20px;"></div>
@@ -340,21 +355,40 @@
      <div style="height: 20px;"></div>
 
      <!-- NEWS -->
-     <section id="news" data-stellar-background-ratio="2.5">
+     <!-- <section id="news" data-stellar-background-ratio="2.5">
           <div class="container">
                <div class="row">
 
-                    <div class="col-md-12 col-sm-12">
-                         <!-- SECTION TITLE -->
-                         <div class="section-title wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="col-md-12 col-sm-12">                         <div class="section-title wow fadeInUp" data-wow-delay="0.1s">
                               <h2>Latest News</h2>
                          </div>
                     </div>
 
+                    <div id="latest-news-container" class="owl-carousel owl-theme"></div>
 
-                    <!-- Latest News will be appended here -->
-                    <div id="latest-news-container" class="row"></div>
 
+                    <div class="col-md-12">
+                         <div class="readmore">
+                              <a class="card-info" href="news-detail.html">Read More</a>
+                         </div>
+                    </div>
+               </div>
+          </div>
+     </section> -->
+     <section id="news" data-stellar-background-ratio="2.5">
+          <div class="container">
+               <div class="row">
+                    <div class="col-md-12">
+                         <div class="section-title wow fadeInUp" data-wow-delay="0.1s">
+                              <h2>Latest News</h2>
+                         </div>
+                    </div>
+               </div>
+
+               <!-- Carousel outside of .row -->
+               <div id="latest-news-container" class="owl-carousel owl-theme"></div>
+
+               <div class="row">
                     <div class="col-md-12">
                          <div class="readmore">
                               <a class="card-info" href="news-detail.html">Read More</a>
@@ -364,11 +398,22 @@
           </div>
      </section>
 
+
+
      <!-- GOOGLE MAP -->
-     <section id="google-map" style="padding-top: 20px;">
-          <iframe
-               src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d493.4358468610016!2d77.0302788!3d8.3536806!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b05a8b454db8ccd%3A0x7a510a332a917f98!2sMariya%20Nilayam%20Hospital!5e0!3m2!1sen!2sin!4v1754652165898!5m2!1sen!2sin"
-               width="100%" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
+     <section id="google-map" data-stellar-background-ratio="2.5" style="padding-top: 20px;">
+          <div class="container">
+               <div class="row">
+                    <div class="col-md-12">
+                         <div class="section-title wow fadeInUp" data-wow-delay="0.1s"
+                              style="margin-top: 20px;align-items: center;text-align: center;">
+                              <h2>Location</h2>
+                         </div>
+                    </div>
+               </div>
+               <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d493.4358468610016!2d77.0302788!3d8.3536806!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b05a8b454db8ccd%3A0x7a510a332a917f98!2sMariya%20Nilayam%20Hospital!5e0!3m2!1sen!2sin!4v1754652165898!5m2!1sen!2sin"
+                    width="100%" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
      </section>
      <img src="" style="object-fit: contain;">
      <!-- FOOTER -->
