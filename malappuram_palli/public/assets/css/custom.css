@@ -146,6 +146,41 @@
 
 /* ****END OF HISTORY**** */
 
+/* #novena  */
+#novena p {
+    text-align: center;
+    width: 100%;
+    font-size: 20px;
+    font-family: 'FontAwesome';
+    padding: 5px;
+    color: #FFE6A7;
+}
+
+#novena .col-md-6 p {
+    text-align: left;
+    font-size: 12px;
+}
+
+.pdf-container {
+    width: 100%;
+    max-width: 800px;
+    height: 80vh;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    margin: auto;
+    scrollbar-width: none;
+}
+
+
+
+canvas {
+    width: 100% !important;
+    height: auto !important;
+    display: block;
+    margin-bottom: 20px;
+}
+
+/* END OF #novena  */
 /* ****For mobile view**** */
 @media (max-width: 767px) {
     #historymenu {
